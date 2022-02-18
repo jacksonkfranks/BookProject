@@ -1,23 +1,26 @@
 ﻿<!DOCTYPE html>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Book Project</title>
-    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <title>@ViewBag.BookTitle</title>
+    <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="bg-dark text-white p-2">
         <span class="navbar-brand ml-2">Book Project</span>
     </div>
-    @*add a cool picture just because*@
     <div class="row m-1 p-1">
         <div id="categories" class="col-3">
             <vc:types></vc:types>
         </div>
-        @*<img style="width:500px;height:600px;" src="~/books.jpg" />*@
         <div class="col-9">
             @RenderBody()
         </div>
+    </div>
+
+    <div>
+        @RenderBody()
     </div>
 </body>
 </html>

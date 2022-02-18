@@ -15,6 +15,7 @@ namespace BookProject.Components
         {
             repo = temp;
         }
+        //Side view for book categories
         public IViewComponentResult Invoke()
         {
             ViewBag.SelectedType = RouteData?.Values["category"];

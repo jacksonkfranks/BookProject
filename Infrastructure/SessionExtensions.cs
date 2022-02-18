@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookProject.Infrastructure
 {
+    //create a session to store books purchased while user is on site. Use string via Json
     public static class SessionExtensions
     {
         public static void SetJson(this ISession session, string key, object value)

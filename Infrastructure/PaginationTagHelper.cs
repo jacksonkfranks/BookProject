@@ -41,6 +41,7 @@ namespace BookProject.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
+            //dynamically build number of pages to fit results
             for (int i = 1; i <= PageBlah.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");

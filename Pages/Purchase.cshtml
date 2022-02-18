@@ -5,6 +5,7 @@
 
 <table class="table table-bordered table-striped">
 
+    @*create a table*@
     <thead>
         <tr>
             <th>Item</th>
@@ -14,6 +15,7 @@
         </tr>
     </thead>
 
+    @*fill table with dynamic info*@
     <tbody>
         @foreach (var i in Model.basket.Items)
         {
@@ -25,7 +27,8 @@
             </tr>
         }
     </tbody>
-
+    
+    @*Calculate total from cart*@
     <tfoot>
         <tr>
             <td colspan="3">Total:</td>
@@ -34,6 +37,7 @@
     </tfoot>
 </table>
 
+@*Continue purchasing!*@
 <div>
     <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Purchasing</a>
 </div>

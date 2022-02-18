@@ -9,6 +9,7 @@ namespace BookProject.Models
     {
         public List<BasketLineItem> Items { get; set; } = new List<BasketLineItem>(); //first part declares, second part instantiates
 
+        //add book and it's quantity
         public void AddItem(Book book, int qty)
         {
             BasketLineItem line = Items
@@ -21,7 +22,6 @@ namespace BookProject.Models
                 {
                     Book = book,
                     Quantity = qty,
-                    //Price = price
                 });
             }
             else
@@ -29,7 +29,7 @@ namespace BookProject.Models
                 line.Quantity += qty;
             }
         }
-
+        //calculate total price and return sum
         public double CalculateTotal()
         {
             double sum = Items.Sum(x => x.Quantity * x.Book.Price);
@@ -44,6 +44,5 @@ namespace BookProject.Models
         public int LineID { get; set; }
         public Book Book { get; set; }
         public int Quantity { get; set; }
-        //public Book Price { get; set; }
     }
 }

@@ -16,6 +16,7 @@ namespace BookProject.Controllers
         {
             repo = temp;
         }
+        //books view model and page info
         public IActionResult Index(string category, int pageNum = 1)
         {
             int pageSize = 10;

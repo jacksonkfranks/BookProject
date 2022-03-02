@@ -32,12 +32,17 @@ namespace BookProject
                 options.UseSqlite(Configuration["ConnectionStrings:BookDBConnection"]);
             });
 
+            //dont forget to add this!
             services.AddScoped<IBookProjectRepository, EFBookProjectRepository>();
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
 
             services.AddRazorPages();
 
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
